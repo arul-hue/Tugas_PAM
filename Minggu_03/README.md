@@ -12,10 +12,11 @@ Aplikasi antarmuka pengguna (UI) profil interaktif yang dibangunkan menggunakan 
 
 ## Hasil Paparan (Screenshots)
 
-| Platform | Paparan Aplikasi                                             |
-| :---: |:-------------------------------------------------------------|
-| **Android** | <img src="ss_android.png" width="250" alt="Paparan Android"> |
-| **Desktop** | <img src="ss_dekstop.png" width="400" alt="Paparan Desktop"> |
+## Hasil Paparan (Screenshots)
+
+|  Android |  Desktop |
+| :---: | :---: |
+| <img src="ss_android.png" width="200" alt="Paparan Android"> | <img src="ss_dekstop.png" width="350" alt="Paparan Desktop"> |
 
 *(Nota: Gantikan nilai `src` dalam jadual di atas dengan nama fail gambar yang telah anda muat naik ke dalam repositori GitHub ini)*
 
