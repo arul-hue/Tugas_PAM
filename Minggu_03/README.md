@@ -8,7 +8,7 @@ Aplikasi antarmuka pengguna (UI) profil interaktif yang dibangun menggunakan par
 2. **Basic Layouts**: Menerapkan kombinasi susunan `Column` (vertikal), `Row` (horizontal), dan `Box` (bertumpuk/z-index) untuk menyusun elemen UI secara presisi.
 3. **Reusable Composables**: Memisahkan UI menjadi komponen modular yang dapat digunakan kembali seperti `ProfileHeader`, `ProfileCard`, dan `InfoItem`.
 4. **Modifiers**: Menggunakan rantai (*chaining*) modifier untuk mengatur ukuran, jarak dalam (*padding*), warna latar belakang (*background*), dan bentuk komponen (contohnya membuat foto profil menjadi bulat).
-5. **Animasi (Bonus +10%)**: Penggunaan fungsi `AnimatedVisibility` untuk menampilkan dan menyembunyikan detail kontak dengan efek *fade in* dan *fade out*.
+5. **Animasi**: Penggunaan fungsi `AnimatedVisibility` untuk menampilkan dan menyembunyikan detail kontak dengan efek *fade in* dan *fade out*.
 
 ## Hasil Tampilan (Screenshots)
 
