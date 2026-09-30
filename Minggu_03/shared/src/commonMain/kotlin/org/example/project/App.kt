@@ -25,20 +25,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-// ============================================================================
 // MAIN ENTRY POINT
-// ============================================================================
 @Composable
 fun App() {
     MyProfileApp()
 }
 
-// ============================================================================
 // MAIN SCREEN
-// ============================================================================
 @Composable
 fun MyProfileApp() {
-    // State untuk mengontrol animasi tampil/sembunyi ProfileCard (Bonus +10%)
+    // State untuk mengontrol animasi tampil/sembunyi ProfileCard
     var isContactVisible by remember { mutableStateOf(false) }
 
     // Column utama (Susunan Vertikal)
@@ -46,13 +42,14 @@ fun MyProfileApp() {
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFF5F5F5)) // Background abu-abu muda
+            .systemBarsPadding()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // 1. Memanggil Reusable Composable Pertama
         ProfileHeader(
             name = "Syahrul Afwan",
-            bio = "Mahasiswa Teknik Informatika ITERA (124140096)\nPassionate in Mobile & Web Development."
+            bio = "Mahasiswa Teknik Informatika ITERA \nEnthusiast in Mobile & Web Development."
         )
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -67,7 +64,7 @@ fun MyProfileApp() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Animasi (AnimatedVisibility)
+        // Animasi
         AnimatedVisibility(
             visible = isContactVisible,
             enter = fadeIn(animationSpec = tween(500)),
@@ -76,30 +73,28 @@ fun MyProfileApp() {
             // 2. Memanggil Reusable Composable Kedua
             ProfileCard(
                 email = "syahrul.124140096@student.itera.ac.id",
-                phone = "+62 812-XXXX-XXXX",
+                phone = "08991827544",
                 location = "Bandar Lampung, Indonesia"
             )
         }
     }
 }
 
-// ============================================================================
 // REUSABLE COMPOSABLE 1: ProfileHeader
-// ============================================================================
 @Composable
 fun ProfileHeader(name: String, bio: String) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth()
     ) {
-        // Box Layout (Tumpukan layer untuk avatar dan indikator status)
+        // Box Layout
         Box(
             contentAlignment = Alignment.BottomEnd,
             modifier = Modifier.padding(bottom = 16.dp)
         ) {
             // Layer 1: Gambar profil melingkar
             Image(
-                imageVector = Icons.Default.Person, // Bisa diganti dengan painterResource(id = R.drawable.foto)
+                imageVector = Icons.Default.Person,
                 contentDescription = "Foto Profil",
                 modifier = Modifier
                     .size(120.dp)
@@ -107,7 +102,7 @@ fun ProfileHeader(name: String, bio: String) {
                     .background(Color.LightGray)
                     .padding(16.dp)
             )
-            // Layer 2: Indikator Online (Lingkaran Hijau di pojok kanan bawah gambar)
+            // Layer 2: Indikator Online
             Box(
                 modifier = Modifier
                     .size(24.dp)
@@ -132,9 +127,7 @@ fun ProfileHeader(name: String, bio: String) {
     }
 }
 
-// ============================================================================
 // REUSABLE COMPOSABLE 2: ProfileCard
-// ============================================================================
 @Composable
 fun ProfileCard(email: String, phone: String, location: String) {
     // Card Container dengan elevasi
@@ -162,9 +155,7 @@ fun ProfileCard(email: String, phone: String, location: String) {
     }
 }
 
-// ============================================================================
 // REUSABLE COMPOSABLE 3: InfoItem
-// ============================================================================
 @Composable
 fun InfoItem(icon: ImageVector, label: String, value: String) {
     // Row Layout (Susunan Horizontal)
@@ -185,3 +176,5 @@ fun InfoItem(icon: ImageVector, label: String, value: String) {
         }
     }
 }
+
+//komen di code disengaja agar lebih mudah dipahami dan dibaca tiao fungsinya.

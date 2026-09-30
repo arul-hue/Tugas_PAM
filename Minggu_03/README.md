@@ -1,30 +1,36 @@
-This is a Kotlin Multiplatform project targeting Android, Desktop (JVM).
+# My Profile App - Praktikum 3
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+Aplikasi antarmuka pengguna (UI) profil interaktif yang dibangunkan menggunakan paradigma UI Deklaratif dengan Kotlin Multiplatform dan Jetpack Compose.
 
-### Running the apps
+## Fitur Utama
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+1. **Paradigma UI Deklaratif**: Menggunakan anotasi `@Composable` untuk membina komponen antarmuka yang reaktif terhadap perubahan.
+2. **Basic Layouts**: Menerapkan kombinasi susunan `Column` (menegak), `Row` (mendatar), dan `Box` (bertumpuk/z-index) untuk menyusun elemen UI dengan tepat.
+3. **Reusable Composables**: Memisahkan antarmuka kepada komponen modular yang boleh digunakan semula seperti `ProfileHeader`, `ProfileCard`, dan `InfoItem`.
+4. **Modifiers**: Menggunakan rantaian (*chaining*) pengubah suai untuk menetapkan saiz, kelegaan (*padding*), warna latar belakang, dan bentuk komponen (contohnya gambar profil berbentuk bulatan).
+5. **Animasi (Bonus +10%)**: Penggunaan fungsi `AnimatedVisibility` untuk memaparkan dan menyembunyikan kad maklumat hubungan secara *fade in* dan *fade out*.
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- Desktop app:
-  - Hot reload: `./gradlew :desktopApp:hotRun --auto`
-  - Standard run: `./gradlew :desktopApp:run`
+## Hasil Paparan (Screenshots)
 
-### Running tests
+| Platform | Paparan Aplikasi                                             |
+| :---: |:-------------------------------------------------------------|
+| **Android** | <img src="ss_android.png" width="250" alt="Paparan Android"> |
+| **Desktop** | <img src="ss_dekstop.png" width="400" alt="Paparan Desktop"> |
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
+*(Nota: Gantikan nilai `src` dalam jadual di atas dengan nama fail gambar yang telah anda muat naik ke dalam repositori GitHub ini)*
 
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- Desktop tests: `./gradlew :shared:jvmTest`
+## Cara Menjalankan
 
----
+1. *Clone* repositori ini ke komputer tempatan (lokal) anda.
+2. Buka projek menggunakan **Android Studio** atau **IntelliJ IDEA**.
+3. Tunggu sehingga proses *Gradle Sync* selesai sepenuhnya (memuat turun kebergantungan yang diperlukan).
+4. **Untuk menjalankan di Android (Emulator/Peranti Fizikal):**
+  * Pilih konfigurasi larian `composeApp` atau `androidApp` pada menu juntai bawah (bersebelahan butang "Run" di panel atas IDE).
+  * Klik butang **Run** (ikon segi tiga hijau ▶️).
+5. **Untuk menjalankan di Desktop (Komputer):**
+  * Buka tab **Terminal** di bahagian bawah perisian IDE anda, kemudian jalankan perintah berikut:
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+    ```bash
+    ./gradlew :composeApp:run
+    ```
+    *(Atau sesuaikan dengan nama modul utama projek anda sekiranya ia berbeza).*
